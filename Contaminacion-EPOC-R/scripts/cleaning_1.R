@@ -1,7 +1,7 @@
 # SCRIPT EN EL QUE SE HACE UNA PRIMERA CAPA DE LIMPIEZA A LOS DATOS DE ENFERMEDADES RESPIRATORIAS.
 # SIMPLEMENTE SE AJUSTAN CORRECTAMENTE LOS FORMATOS: FECHAS, DATOS GEOGRÁFICOS
 
-library(data.table); library(lubridate); library(plyr)
+library(data.table); library(lubridate)
 
 epoc_data <- fread("raw_data/CMBD_6_20181217-135856.csv")
 

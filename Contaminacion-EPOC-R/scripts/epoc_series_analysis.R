@@ -1,6 +1,6 @@
 # SCRIPT EN EL QUE SE ANALIZA LA SERIE DE ENFERMEDADES EPOCS DESDE UN PUNTO DE VISTA DE SERIE TEMPORAL
 
-library(forecast); library(ggplot2)
+library(data.table); library(forecast); library(ggplot2); library(lubridate); library(plyr)
 
 load("cleaned_data/epoc_data.RData")
 
