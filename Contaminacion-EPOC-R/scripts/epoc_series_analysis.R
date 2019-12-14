@@ -28,7 +28,9 @@ Sys.setlocale("LC_TIME", "C")
 epoc_casos$weekday <- weekdays(epoc_casos$`Fecha de ingreso`)
 
 ggplot(data = epoc_casos, aes(x = weekday, y = `Número de casos`, group = weekday)) +
-  geom_boxplot(fill = "lightgrey") +
+   geom_boxplot(fill = "lightgrey") +
+  # geom_violin(fill = "lightgrey") +
+  # geom_boxplot(width = 0.2) +
   scale_x_discrete(limits = c("Monday", "Tuesday", "Wednesday", "Thursday",
                               "Friday", "Saturday", "Sunday")) +
   labs(x = "Weekday", y = "Number of patients") +
