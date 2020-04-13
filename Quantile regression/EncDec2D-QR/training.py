@@ -281,6 +281,7 @@ print("\nNormalization:" , logger.logs['norm'][0], ', k:', logger.logs['k'][0])
 
 logger.save(model)
 
+
 """
 #######################################################################################################################
 # SOME VISUALIZATIONS
@@ -297,50 +298,3 @@ heatmap_example(real, prediction, m_index, opt.t_out, opt.n_points)
 plot_quantiles(real, prediction, opt.t_out, 19, opt.q)
 plot_learning_curves(logger)
 reliability(y_dnorm, y_pred_dnorm, opt.t_out, opt.q)
-
-# plt.hist(y_pred_dnorm[:,:,:,0].reshape(-1),50, cumulative=True, density=True, histtype='step', label = 'Predicted')
-# plt.hist(y_dnorm[:,:,0].reshape(-1),50, cumulative=True, density=True, histtype='step', label = 'Real')
-# plt.legend()
-
-# data = torch.Tensor(np.genfromtxt(os.path.join(opt.datadir, opt.dataset + opt.extension)))
-# data2 = data[-(1*8760):]
-# X_train2, Y_train2, X_val2, Y_val2, X_test2, Y_test2, sc2 = prepare_datasets(data2, opt.t_inp, 
-#                                                                       opt.t_out, opt.n_points,
-#                                                                       9, opt.n_inp,
-#                                                                       opt.norm, opt.sp_norm)
-
-# test_dataset2 = []
-# for i in range(len(X_train2)):
-#     test_dataset2.append([X_train2[i], Y_train2[i]]) 
-
-# test_loader2 = torch.utils.data.DataLoader(dataset = test_dataset2,
-#                                             batch_size = len(X_train2),
-#                                             shuffle = False)
-
-# model.to('cpu')
-# model.eval()
-# with torch.no_grad():        
-#     for x,y in test_loader2:
-#         if torch.cuda.is_available():
-#             x = x
-#             y = y
-#         else:
-#             x = x
-#             y = y
-#         y_pred = model(x)
-
-#         _,Q,_,_,_ = y_pred.size()
-#         y_pred_dnorm = []
-#         for i in range(Q):
-#             y_pred_dnorm.append(sc2.rev_scale(y_pred[:,i].cpu()).view(1,-1,opt.t_out, opt.n_points))
-#         y_pred_dnorm = torch.cat(y_pred_dnorm, dim = 0)
-#         y_dnorm = sc2.rev_scale(y.cpu()).view(-1,opt.t_out, opt.n_points)
-
-#         loss_test = loss_fn(y_pred, y)
-#         print("\n=============================================")
-#         print("   Test QLoss: ", loss_test.item(),
-#               "\n   Test RMSE: ",rmse(y_pred_dnorm[m_index], y_dnorm),
-#               "\n   Test Bias: ", bias(y_pred_dnorm[m_index], y_dnorm),
-#               "\n   Test WMAPE(%): ", wmape(y_pred_dnorm[m_index], y_dnorm))
-#         print("=============================================\n")
-

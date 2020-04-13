@@ -42,9 +42,6 @@ def heatmap_example(real, pred, q_index, x_max, y_max, fig_name="Heatmap", fig_s
 
 
 def plot_quantiles(real, pred, x_max, point, quantiles, fig_name="Quantiles", fig_size=(12,6), dpi=80):
-    """
-    Siempre tienen que venir los quantiles en impar, con el 0.5 en medio.
-    """
     plt.figure(fig_name, figsize=fig_size, dpi=dpi)
     plt.plot(real[:,point], linewidth=2, label = 'Ground truth')
     for i,quantile in enumerate(quantiles):

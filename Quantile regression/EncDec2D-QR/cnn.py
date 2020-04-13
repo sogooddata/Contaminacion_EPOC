@@ -1,9 +1,8 @@
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 
-PRIMERA APROXIMACIÓN ENCODER-DECODER 
+ENCODER-DECODER CNN MODEL
 
 @author: rodrigo
 """
